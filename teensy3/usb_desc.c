@@ -933,8 +933,8 @@ static uint8_t config_descriptor[CONFIG_DESC_SIZE] = {
         0,                                      // bAlternateSetting
         1,                                      // bNumEndpoints
         0x03,                                   // bInterfaceClass (0x03 = HID)
-        0x00,                                   // bInterfaceSubClass (0x01 = Boot)
-        0x00,                                   // bInterfaceProtocol (0x02 = Mouse)
+        0x01,                                   // bInterfaceSubClass (0x01 = Boot)
+        0x02,                                   // bInterfaceProtocol (0x02 = Mouse)
         0,                                      // iInterface
         // HID interface descriptor, HID 1.11 spec, section 6.2.1
         9,                                      // bLength
