@@ -65,6 +65,9 @@ void usb_tx_cb(void);
 /* called when a USB packet is received (non control, non 0 length) */
 void usb_rx_cb(void);
 #define USB_RX_CB_AVAILABLE
+/* called when keyboard input is received (led status change) */
+void keyboard_cb(uint8_t previous, uint8_t current);
+#define USB_KEYBOARD_CB_AVAILABLE
 
 extern volatile uint8_t usb_configuration;
 

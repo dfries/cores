@@ -611,6 +611,7 @@ static void usb_control(uint32_t stat)
 #endif
 #ifdef KEYBOARD_INTERFACE
 		if (setup.word1 == 0x02000921 && setup.word2 == ((1<<16)|KEYBOARD_INTERFACE)) {
+			keyboard_cb(keyboard_leds, buf[0]);
 			keyboard_leds = buf[0];
 			endpoint0_transmit(NULL, 0);
 		}
@@ -886,8 +887,14 @@ void usb_unused_cb(void)
 {
 }
 
+void keyboard_unused_cb(uint8_t previous, uint8_t current)
+{
+}
+
 void usb_tx_cb(void)	__attribute__ ((weak, alias("usb_unused_cb")));
 void usb_rx_cb(void)	__attribute__ ((weak, alias("usb_unused_cb")));
+void keyboard_cb(uint8_t previous, uint8_t current)
+	__attribute__ ((weak, alias("keyboard_unused_cb")));
 
 void usb_isr(void)
 {
