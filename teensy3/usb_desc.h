@@ -364,7 +364,7 @@ let me know?  http://forum.pjrc.com/forums/4-Suggestions-amp-Bug-Reports
   #define KEYBOARD_INTERFACE    2	// Keyboard
   #define KEYBOARD_ENDPOINT     1
   #define KEYBOARD_SIZE         8
-  #define KEYBOARD_INTERVAL     10
+  #define KEYBOARD_INTERVAL     2
   #define MOUSE_INTERFACE       3	// Mouse
   #define MOUSE_ENDPOINT        5
   #define MOUSE_SIZE            8
