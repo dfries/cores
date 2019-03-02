@@ -57,12 +57,15 @@ inline boolean isAlpha(int c)
 }
 
 
+// match newlib ctype.h define for isascii
+#if __MISC_VISIBLE || __XSI_VISIBLE
 // Checks whether c is a 7-bit unsigned char value
 // that fits into the ASCII character set.
 inline boolean isAscii(int c)
 {
   return ( isascii (c) == 0 ? false : true);
 }
+#endif
 
 
 // Checks for a blank character, that is, a space or a tab.
@@ -139,12 +142,15 @@ inline boolean isHexadecimalDigit(int c)
 }
 
 
+// match newlib ctype.h define for isascii
+#if __MISC_VISIBLE || __XSI_VISIBLE
 // Converts c to a 7-bit unsigned char value that fits into the
 // ASCII character set, by clearing the high-order bits.
 inline int toAscii(int c)
 {
   return toascii (c);
 }
+#endif
 
 
 // Warning:
